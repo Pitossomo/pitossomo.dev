@@ -7,6 +7,6 @@ document.addEventListener('load', (e) => {
 
 document.addEventListener('mousemove', (e) => {
   mouse = {x: e.clientX, y: e.clientY}
-  const newBaseHue = ((mouse.x+mouse.y)/20)%256
+  const newBaseHue = ((mouse.x+mouse.y)/100)%256
   root.style.setProperty('--base-hue', newBaseHue)
 })
