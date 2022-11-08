@@ -7,7 +7,8 @@
   <title>Pitossomo.dev</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css">
-  <script src="logic.js"></script>
+  <script type="text/javascript" src="logic.js"></script>
+  <script type="text/javascript" src="dat.gui.min.js"></script>
 </head>
 <body>
   <nav class="nav">
@@ -18,6 +19,7 @@
     <a href="#plus">+</a>
   </nav>
   <section id="head">
+    <canvas></canvas>
     <div>
       <h1>Pitossomo.dev</h1>
       <div class="contacts">
@@ -29,7 +31,8 @@
         </a>
         <a href="https://web.dio.me/users/pedro_h_teles?tab=achievements">
           <img src="imgs/logoDIO.svg" alt="logo DIO" height="20px">
-        </a>  
+        </a>
+        <div id="head-overlay"></div>
       </div>
     </div>
   </section>
@@ -48,5 +51,6 @@
   <section id="+">
     <h2>+</h2>
   </section>
+  <script src="webgl-fluid-remix.js"></script>
 </body>
 </html>
