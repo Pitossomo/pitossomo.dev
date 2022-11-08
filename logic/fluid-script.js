@@ -31,7 +31,7 @@ SOFTWARE.
 // Simulation section
 
 const canvas = document.getElementsByTagName('canvas')[0];
-const canvasWrapper = document.getElementById('head-overlay')
+const canvasWrapper = document.getElementById('head')
 resizeCanvas();
 
 let config = {
@@ -1279,8 +1279,8 @@ function correctRadius (radius) {
 }
 
 canvasWrapper.addEventListener('mouseover', e => {
-    let posX = scaleByPixelRatio(e.offsetX);
-    let posY = scaleByPixelRatio(e.offsetY);
+    let posX = scaleByPixelRatio(e.clientX);
+    let posY = scaleByPixelRatio(e.clientY);
     let pointer = pointers.find(p => p.id === -1);
     if (pointer == null)
         pointer = new PointerPrototype();
@@ -1288,15 +1288,17 @@ canvasWrapper.addEventListener('mouseover', e => {
 });
 
 canvasWrapper.addEventListener('mousemove', e => {
+    console.log(e.clientX, e.clientY)
     let pointer = pointers[0];
     if (!pointer.down) return;
-    let posX = scaleByPixelRatio(e.offsetX);
-    let posY = scaleByPixelRatio(e.offsetY);
+    let posX = scaleByPixelRatio(e.clientX);
+    let posY = scaleByPixelRatio(e.clientY);
     updatePointerMoveData(pointer, posX, posY);
 });
 
 canvasWrapper.addEventListener('touchstart', e => {
     e.preventDefault();
+    console.log(e.bubbles)
     const touches = e.targetTouches;
     while (touches.length >= pointers.length)
         pointers.push(new PointerPrototype());
@@ -1309,6 +1311,7 @@ canvasWrapper.addEventListener('touchstart', e => {
 
 canvasWrapper.addEventListener('touchmove', e => {
     e.preventDefault();
+    console.log(e.pageX, e.pageY)
     const touches = e.targetTouches;
     for (let i = 0; i < touches.length; i++) {
         let pointer = pointers[i + 1];
