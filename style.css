@@ -52,10 +52,6 @@ canvas {
   z-index: -1;
 }
 
-.contacts {
-
-}
-
 h1 {
   font-size: 40px;
   font-weight: 700;
@@ -81,4 +77,29 @@ section:nth-of-type(2n+1) {
 section:nth-of-type(2n+2) {
   background-color: var(--secondary-color);
   color: var(--primary-color);
+}
+
+.project-list {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  height: 500px;
+  margin: 0px 24px;
+}
+
+.project-list li {
+  margin: 8px;
+  display: flex;
+  width: 400px;
+}
+
+.project-list li img {
+  width: 200px;
+  height: 200px;
+}
+
+.project-list p {
+  margin: 8px;
+  display: flex;
+  text-align: justify;
 }
