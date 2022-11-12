@@ -85,7 +85,7 @@ h1 {
 }
 
 h1::before {
-  content: " ";
+  content: "\00a0";
 }
 
 h2 {
@@ -123,35 +123,70 @@ section:nth-of-type(2n+2) {
   flex-grow: 1;
 }
 
+#about p {
+  font-size: 20px;
+  padding: 8px;
+  line-height: 1.5em;
+}
+
+#about a {
+  text-decoration: none;
+}
+
+.logo {
+  padding: 4px;
+}
+
+#projects {
+  display: flex;
+  flex-direction: column;
+}
+
 .project-list {
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  height: 500px;
+  justify-content: center;
+  height: 600px;
   margin: 0px 80px;
 }
 
-.project-list li {
-  margin: 8px;
+.project-item {
   display: flex;
-  width: 400px;
+  transition: 0.4s ease-out;
+  z-index: 1;
 }
 
-.project-list li img {
+.project-item:not(:first-child) {
+  margin-left: -100px;
+}
+
+
+.project-item img {
   width: 200px;
   height: 200px;
-  z-index: 1;
-  transition: transform 0.5s;
+  box-shadow: -1rem 0 3rem black;
 }
 
-.project-list li img:hover{
-  transform: scale(2.5);
+.project-item figure:hover img{
+  transform: scale(2.0);
+  transition: 0.4s ease-out;
 }
 
+.project-item:hover ~ .project-item {
+  transform: translateX(100px);
+  transition: 0.4s ease-out;
+}
 
-.project-list figcaption {
-  text-decoration: none;
-  font-weight: 600;
-  width: 300px;
-  line-height: 1.5em;
+.project-item figcaption {
+  visibility: collapse;
+}
+
+.project-item figure {
+  width:fit-content;
+}
+
+.project-item figure:hover figcaption {
+  transform: translateY(100px);
+  transition: 0.4s ease-out;
+  visibility: visible;
 }
