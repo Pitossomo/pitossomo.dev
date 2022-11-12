@@ -4,6 +4,30 @@
   --secondary-color: hsl(calc(var(--base-hue) - 180),60%,80%);
 }
 
+@media (max-width: 480px) {
+  :root {
+    --h1-letter-spacing: 16px;
+  }  
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+  :root {
+    --h1-letter-spacing: 32px;
+  }  
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  :root {
+    --h1-letter-spacing: 64px;
+  }  
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --h1-letter-spacing: 128px;
+  }  
+}
+
 html, body {
   width: 100%;
   overflow-x: hidden;
@@ -19,7 +43,7 @@ html, body {
   height: 50%;
   transform: translate(0, -50%);
   border-radius: 36px;
-  background-color: rgba(255,255,255,30%);
+  background-color: rgba(255,255,255,10%);
   padding: 12px;
   display: flex;
   flex-direction: column;
@@ -31,7 +55,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255,255,255,0%);
+  background-color: rgba(5,5,5,0%);
 }
 
 canvas {
@@ -53,8 +77,15 @@ canvas {
 }
 
 h1 {
+  user-select: none;
   font-size: 32px;
   font-weight: 700;
+  color: rgb(5,5,5);
+  letter-spacing: var(--h1-letter-spacing);
+}
+
+h1::before {
+  content: " ";
 }
 
 h2 {
@@ -77,6 +108,19 @@ section:nth-of-type(2n+1) {
 section:nth-of-type(2n+2) {
   background-color: var(--secondary-color);
   color: var(--primary-color);
+}
+
+#about {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 16px;
+  flex-grow: 1;
 }
 
 .project-list {

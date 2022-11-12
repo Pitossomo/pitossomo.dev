@@ -39,25 +39,25 @@ let config = {
     DYE_RESOLUTION: 1024,
     CAPTURE_RESOLUTION: 512,
     DENSITY_DISSIPATION: 3,
-    VELOCITY_DISSIPATION: 3,
+    VELOCITY_DISSIPATION: 0.3,
     PRESSURE: 0.8,
     PRESSURE_ITERATIONS: 20,
-    CURL: 0,
-    SPLAT_RADIUS: 0.25,
-    SPLAT_FORCE: 6000,
+    CURL: 100,
+    SPLAT_RADIUS: 0.5,
+    SPLAT_FORCE: 800,
     SHADING: true,
-    COLORFUL: false,
-    COLOR_UPDATE_SPEED: 10,
+    COLORFUL: true,
+    COLOR_UPDATE_SPEED: 3,
     PAUSED: false,
     BACK_COLOR: { r: 5, g: 5, b: 5 },
     TRANSPARENT: false,
-    BLOOM: true,
+    BLOOM: false,
     BLOOM_ITERATIONS: 8,
     BLOOM_RESOLUTION: 256,
     BLOOM_INTENSITY: 0.8,
     BLOOM_THRESHOLD: 0.7,
     BLOOM_SOFT_KNEE: 0.7,
-    SUNRAYS: true,
+    SUNRAYS: false  ,
     SUNRAYS_RESOLUTION: 196,
     SUNRAYS_WEIGHT: 0.5,
 }
@@ -1279,6 +1279,7 @@ function correctRadius (radius) {
 }
 
 canvasWrapper.addEventListener('mouseover', e => {
+    console.log(e.clientX, e.clientY)
     let posX = scaleByPixelRatio(e.clientX);
     let posY = scaleByPixelRatio(e.clientY);
     let pointer = pointers.find(p => p.id === -1);
@@ -1288,7 +1289,6 @@ canvasWrapper.addEventListener('mouseover', e => {
 });
 
 canvasWrapper.addEventListener('mousemove', e => {
-    console.log(e.clientX, e.clientY)
     let pointer = pointers[0];
     if (!pointer.down) return;
     let posX = scaleByPixelRatio(e.clientX);
