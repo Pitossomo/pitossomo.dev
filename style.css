@@ -156,29 +156,29 @@ section:nth-of-type(2n+2) {
 
 .project-item {
   display: flex;
-  transition: 0.4s ease-out;
+  transition: 0.2s ease-in-out;
   z-index: 1;
+  width: 350px;
 }
 
 .project-item:not(:first-child) {
-  margin-left: -100px;
+  margin-left: -200px;
 }
 
-
 .project-item img {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   box-shadow: -1rem 0 3rem black;
 }
 
 .project-item figure:hover img{
-  transform: scale(2.0);
-  transition: 0.4s ease-out;
+  transform: scale(1.5);
+  transition: 0.2s ease-in-out;
 }
 
 .project-item:hover ~ .project-item {
-  transform: translateX(100px);
-  transition: 0.4s ease-out;
+  transform: translateX(150px);
+  transition: 0.2s ease-in-out;
 }
 
 .project-item figcaption {
@@ -191,6 +191,6 @@ section:nth-of-type(2n+2) {
 
 .project-item figure:hover figcaption {
   transform: translateY(100px);
-  transition: 0.4s ease-out;
+  transition: 0.2s ease-in-out;
   visibility: visible;
 }
