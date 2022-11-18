@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pitossomo.dev</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="style.css">
-  <script type="text/javascript" src="/logic/fluid-dat.gui.min.js"></script>
+  <link rel="stylesheet" href="./src/styles/index.css">
+  <script type="text/javascript" src="/src/scripts/fluid-dat.gui.min.js"></script>
 </head>
 <body>
   
@@ -53,16 +53,16 @@
         <p>Algumas organizações com as quais já contribui:</div>
         <p>
           <a class="customer" href="https://healthmoveis.com.br/">
-            <img src="./imgs/customers/health-moveis.png" alt="logo Health Móveis" height="96px">
+            <img src="./assets/imgs/customers/health-moveis.png" alt="logo Health Móveis" height="96px">
           </a>
           <a class="customer" href="https://portal.al.go.leg.br/">
-            <img src="./imgs/customers/alego.svg" alt="logo ALEGO" height="96px">
+            <img src="./assets/" alt="logo ALEGO" height="96px">
           </a>
           <a class="customer" href="https://www.saneago.com.br">
-            <img src="./imgs/customers/saneago.svg" alt="logo Saneago" height="96px">
+            <img src="./assets/imgs/customers/saneago.svg" alt="logo Saneago" height="96px">
           </a>
           <a class="customer" href="https://www.gov.br/turismo/pt-br">
-            <img src="./imgs/customers/mtur.jpg" alt="logo MTur" height="96px">
+            <img src="./assets/imgs/customers/mtur.jpg" alt="logo MTur" height="96px">
           </a>
         </p>
 
@@ -70,35 +70,32 @@
         <p>Me acompanhe em:</p>
         <p>
           <a class="contact" href="https://www.linkedin.com/in/pedrocarvalhoeng/">
-            <img src="imgs/contacts/linkedin.svg" alt="logo linkedin" height="32px">
+            <img src="assets/imgs/contacts/linkedin.svg" alt="logo linkedin" height="32px">
           </a>
           <a class="contact" href="https://github.com/Pitossomo">
-            <img src="imgs/contacts/github.png" alt="logo github" height="32px">
+            <img src="assets/imgs/contacts/github.png" alt="logo github" height="32px">
           </a>
           <a class="contact" href="https://web.dio.me/users/pedro_h_teles?tab=achievements">
-            <img src="imgs/contacts/dio.svg" alt="logo DIO" height="32px">
+            <img src="assets/imgs/contacts/dio.svg" alt="logo DIO" height="32px">
           </a>
         </p>
       </div>
     </div>
-
   </section>
   
   <section id="projects">
     <h2>Projetos Recentes</h2>
     <ul class="project-list">
-      <li class="project-item">
-        <figure>
-          <a href="https://healthmoveis.com.br/cob-3136-carrinho-operacional-com-bateria/">
-            <img src="./imgs/projects/calculadoraROI.png" alt="Health Móveis ROI Calculator" />
-          </a>
-          <figcaption>Cálculo de ROI para equipamentos hospitalares</figcaption>
-        </figure>
-      </li>
+      <project-item></project-item>
+      <project-item></project-item>
+      <project-item></project-item>
+      <project-item></project-item>
+
+      <!--
       <li class="project-item">
         <figure>
           <a href="https://react-orange-bootcamp.vercel.app/">
-            <img src="./imgs/projects/bootcamp-orange-tech.png" alt="projects made for Orange Tech Bootcamp" />
+            <img src="./assets/imgs/projects/bootcamp-orange-tech.png" alt="projects made for Orange Tech Bootcamp" />
           </a>
           <figcaption>Projetos do Bootcamp Orange Tech +</figcaption>
         </figure>
@@ -106,7 +103,7 @@
       <li class="project-item">
         <figure>
           <a href="https://www.npmjs.com/package/beamsjs">
-            <img src="./imgs/projects/beamsJSnpm.png" alt="BeamsJS package in npm" />
+            <img src="./assets/imgs/projects/beamsJSnpm.png" alt="BeamsJS package in npm" />
           </a>
           <figcaption>Pacote publicado no npm para cálculo de vigas</figcaption>
         </figure>
@@ -114,11 +111,12 @@
       <li class="project-item">
         <figure>
           <a href="https://beamsjs.vercel.app">
-            <img src="./imgs/projects/beamsJSvercel.png" alt="User Interface for BeamsJS in vercel.app" />
+            <img src="./assets/imgs/projects/beamsJSvercel.png" alt="User Interface for BeamsJS in vercel.app" />
           </a>
           <figcaption>Interface gráfica para cálculo estrutural de vigas</figcaption>
         </figure>
       </li>
+      -->
     </ul>
   </section>
   
@@ -140,7 +138,8 @@
   </section>
   -->
 
-  <script type="text/javascript" src="./logic/script.js"></script>
-  <script src="/logic/fluid-script.js"></script>
+  <script type="text/javascript" src="./src/index.js"></script>
+  <script type="text/javascript" src="/src/scripts/fluid-script.js"></script>
+  <script type="text/javascript" src="./src/components/ProjectItem.js" defer></script>
 </body>
 </html>
