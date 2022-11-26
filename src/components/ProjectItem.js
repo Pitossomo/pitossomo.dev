@@ -14,11 +14,11 @@ class ProjectItem extends HTMLElement {
     const figure = document.createElement('figure')
     
     const a = document.createElement('a')
-    a.setAttribute('href', this.getAttribute('projectUrl')) 
+    a.href = this.getAttribute('projectUrl') 
     
     const img = document.createElement('img')
-    img.setAttribute('src', this.getAttribute('imgSrc'))
-    img.setAttribute('alt', this.getAttribute('alt'))
+    img.src = this.getAttribute('imgSrc')
+    img.alt = this.getAttribute('alt')
     a.appendChild(img)
     
     figure.appendChild(a)
