@@ -14,17 +14,17 @@ class ProjectItem extends HTMLElement {
     const figure = document.createElement('figure')
     
     const a = document.createElement('a')
-    a.setAttribute('href', 'https://healthmoveis.com.br/cob-3136-carrinho-operacional-com-bateria') 
+    a.setAttribute('href', this.getAttribute('projectUrl')) 
     
     const img = document.createElement('img')
-    img.setAttribute('src', 'assets/imgs/projects/calculadoraROI.png')
-    img.setAttribute('alt', 'Health Móveis ROI Calculator')
+    img.setAttribute('src', this.getAttribute('imgSrc'))
+    img.setAttribute('alt', this.getAttribute('alt'))
     a.appendChild(img)
     
     figure.appendChild(a)
     
     const figcaption = document.createElement('figcaption')
-    figcaption.innerText = 'Cálculo de ROI para equipamentos hospitalares'
+    figcaption.innerText = this.getAttribute('figcaption')
     figure.appendChild(figcaption)
     
     componentRoot.appendChild(figure)
