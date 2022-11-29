@@ -1297,7 +1297,6 @@ canvasWrapper.addEventListener('mousemove', e => {
 });
 
 canvasWrapper.addEventListener('touchstart', e => {
-    e.preventDefault();
     console.log(e.bubbles)
     const touches = e.targetTouches;
     while (touches.length >= pointers.length)
@@ -1310,7 +1309,6 @@ canvasWrapper.addEventListener('touchstart', e => {
 });
 
 canvasWrapper.addEventListener('touchmove', e => {
-    e.preventDefault();
     console.log(e.pageX, e.pageY)
     const touches = e.targetTouches;
     for (let i = 0; i < touches.length; i++) {
@@ -1320,7 +1318,7 @@ canvasWrapper.addEventListener('touchmove', e => {
         let posY = scaleByPixelRatio(touches[i].pageY);
         updatePointerMoveData(pointer, posX, posY);
     }
-}, false);
+});
 
 window.addEventListener('touchend', e => {
     const touches = e.changedTouches;
