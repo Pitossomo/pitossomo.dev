@@ -1279,9 +1279,8 @@ function correctRadius (radius) {
 }
 
 canvasWrapper.addEventListener('mouseover', e => {
-    console.log(e.clientX, e.clientY)
-    let posX = scaleByPixelRatio(e.clientX);
-    let posY = scaleByPixelRatio(e.clientY);
+    let posX = scaleByPixelRatio(e.pageX);
+    let posY = scaleByPixelRatio(e.pageY);
     let pointer = pointers.find(p => p.id === -1);
     if (pointer == null)
         pointer = new PointerPrototype();
@@ -1291,8 +1290,8 @@ canvasWrapper.addEventListener('mouseover', e => {
 canvasWrapper.addEventListener('mousemove', e => {
     let pointer = pointers[0];
     if (!pointer.down) return;
-    let posX = scaleByPixelRatio(e.clientX);
-    let posY = scaleByPixelRatio(e.clientY);
+    let posX = scaleByPixelRatio(e.pageX);
+    let posY = scaleByPixelRatio(e.pageY);
     updatePointerMoveData(pointer, posX, posY);
 }, true);
 
