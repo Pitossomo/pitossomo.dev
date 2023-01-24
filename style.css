@@ -167,31 +167,35 @@ section:nth-of-type(2n+2) {
 #projects {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  height: fit-content;
+  min-height: 100vh;
 }
 
 .project-list {
   display: flex;
+  flex-direction: row;
+  flex-grow: 1;
   flex-wrap: wrap;
   margin: 0px 80px;
+  align-items: space-around;
+  justify-content: space-around ;
 }
 
 .project-item {
   display: flex;
+  margin: 4px;
   border-radius: 18px;
   transition: 0.2s ease-in-out;
   z-index: 1;
-  width: 300px;
 }
 
-.project-item:not(:first-child) {
-  margin-left: -200px;
+.project-item:hover {
+  z-index: 2;
 }
 
 .project-item img {
-  width: 300px;
-  height: 300px;
+  width: 12rem;
+  height: 12rem;
   box-shadow: -1rem 0 3rem black;
   outline-offset: 3px;
   outline: 3px solid white;
@@ -214,20 +218,25 @@ section:nth-of-type(2n+2) {
 }
 
 .project-item:hover ~ .project-item {
-  transform: translateX(150px);
   transition: 0.2s ease-in-out;
 }
 
 .project-item figcaption {
   visibility: collapse;
+  z-index: 10;
+  background-color: rgba(80,80,80,90%);
+  padding: 12px;
+  border-radius: 8px;
 }
 
 .project-item figure {
+  display: flex;
+  flex-direction: column;
   width:fit-content;
 }
 
 .project-item figure:hover figcaption {
-  transform: translateY(100px);
+  z-index: 3;
   transition: 0.2s ease-in-out;
   visibility: visible;
 }
