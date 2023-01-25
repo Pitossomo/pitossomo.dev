@@ -164,6 +164,16 @@ section:nth-of-type(2n+2) {
   padding: 4px;
 }
 
+.scalable {
+  transform: scale(1);
+  transition: 0.3s;
+}
+
+.scalable :hover {
+  transform: scale(1.5);
+  transition: 0.3s;
+}
+
 #projects {
   display: flex;
   flex-direction: column;
@@ -174,16 +184,20 @@ section:nth-of-type(2n+2) {
 .project-list {
   display: flex;
   flex-direction: row;
-  flex-grow: 1;
   flex-wrap: wrap;
+  flex-grow: 1;
   margin: 0px 80px;
-  align-items: space-around;
-  justify-content: space-around ;
+  margin-bottom: 10rem;
+  align-items: space-evenly;
+  justify-content: space-around;
 }
 
 .project-item {
   display: flex;
-  margin: 4px;
+  height: 15rem;
+  width: 15rem;
+  margin: auto;
+  padding: auto;
   border-radius: 18px;
   transition: 0.2s ease-in-out;
   z-index: 1;
@@ -196,20 +210,11 @@ section:nth-of-type(2n+2) {
 .project-item img {
   width: 12rem;
   height: 12rem;
+  margin: 1rem;
+  border-radius: 1rem;
   box-shadow: -1rem 0 3rem black;
   outline-offset: 3px;
   outline: 3px solid white;
-  rotate: 6deg;
-}
-
-.scalable {
-  transform: scale(1);
-  transition: 0.3s;
-}
-
-.scalable :hover {
-  transform: scale(1.5);
-  transition: 0.3s;
 }
 
 .project-item figure:hover img{
@@ -232,7 +237,6 @@ section:nth-of-type(2n+2) {
 .project-item figure {
   display: flex;
   flex-direction: column;
-  width:fit-content;
 }
 
 .project-item figure:hover figcaption {
